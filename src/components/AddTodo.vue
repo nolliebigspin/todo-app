@@ -26,8 +26,12 @@ export default {
         completed: false
       };
       // Send to parent
-      this.$emit("add-toto", newTodo);
-      this.title = "";
+      if (newTodo.title.length > 0) {
+        this.$emit("add-todo", newTodo);
+        this.title = "";
+      } else {
+        alert("Todo can't be empty!");
+      }
     }
   }
 };
