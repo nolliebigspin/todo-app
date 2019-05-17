@@ -1,7 +1,16 @@
 <template>
   <div>
     <form @submit="addTodo">
-      <input type="text" v-model="title" name="title" placeholder="Add Todo..." class="input">
+      <input type="text" v-model="title" placeholder="Add Todo..." class="input">
+      <input type="text" v-model="description" placeholder="Add a description" class="input">
+      <div class="select">
+        <select v-model="status">
+          <option>todo</option>
+          <option>active</option>
+          <option>completed</option>
+        </select>
+      </div>
+      <input type="text" v-model="deadline" placeholder="Deadline..." class="input">
       <input type="submit" value="Submit" class="button is-primary">
     </form>
   </div>
@@ -14,7 +23,10 @@ export default {
   name: "AddTodo",
   data() {
     return {
-      title: ""
+      title: "",
+      description: "",
+      status: "",
+      deadline: ""
     };
   },
   methods: {
@@ -23,14 +35,19 @@ export default {
       const newTodo = {
         id: uuid.v4(),
         title: this.title,
-        completed: false
+        description: this.description,
+        status: this.status,
+        deadline: this.deadline
       };
       // Send to parent
       if (newTodo.title.length > 0) {
         this.$emit("add-todo", newTodo);
         this.title = "";
+        this.description = "";
+        this.status = "";
+        this.deadline = "";
       } else {
-        alert("Todo can't be empty!");
+        alert("Todo Title can't be empty!");
       }
     }
   }
@@ -49,5 +66,9 @@ input [type="text"] {
 
 input [type="submit"] {
   flex: 2;
+}
+
+.radio {
+  margin-left: 10px;
 }
 </style>

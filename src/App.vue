@@ -25,17 +25,23 @@ export default {
         {
           id: 1,
           title: "Todo One",
-          completed: false
+          description: "Backflip lernen",
+          status: "todo",
+          deadline: "23.05.19"
         },
         {
           id: 2,
           title: "Todo Two",
-          completed: false
+          description: "Whips lernen",
+          status: "active",
+          deadline: "24.05.19"
         },
         {
           id: 3,
           title: "Todo Three",
-          completed: false
+          description: "Vue.js lernen",
+          status: "completed",
+          deadline: "25.05.19"
         }
       ]
     };
