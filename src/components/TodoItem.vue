@@ -5,7 +5,13 @@
       &nbsp; | &nbsp;
       <small>{{ todo.description }}</small>
       &nbsp; | &nbsp;
-      {{ todo.status }}
+      <span class="select">
+        <select v-model="todo.status">
+          <option>todo</option>
+          <option>active</option>
+          <option>completed</option>
+        </select>
+      </span>
       &nbsp; | &nbsp;
       {{ todo.deadline }}
       <a
