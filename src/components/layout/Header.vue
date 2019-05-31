@@ -6,7 +6,12 @@
 
 <script>
 export default {
-  name: "Header"
+  name: "Header",
+  methods: {
+    flash() {
+      alert("hi");
+    }
+  }
 };
 </script>
 
