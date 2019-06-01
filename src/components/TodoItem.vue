@@ -14,6 +14,8 @@
 </template>
 
 <script>
+import "./TodoItem.scss";
+
 export default {
   name: "TodoItem",
   props: ["todo"],
@@ -30,22 +32,5 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.todo-item {
-  background: #f4f4f4;
-  padding: 10px;
-  border-bottom: 1px #ccc dotted;
-
-  &.is-complete {
-    text-decoration: line-through;
-    color: #f00;
-  }
-}
-
-.delete {
-  background: #ff0000;
-  color: #fff;
-  border: none;
-  cursor: pointer;
-  float: right;
-}
+@import "./TodoItem";
 </style>

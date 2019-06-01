@@ -1,0 +1,39 @@
+.todo-item {
+    background: #f4f4f4;
+    padding: 10px;
+    border-bottom: 1px #ccc dotted;
+    
+    cursor: pointer;
+
+    &:hover {
+        color: #e3e3e3;
+        background: #333;
+
+        .delete {
+            background-color: rgb(56, 56, 56);
+        }
+
+        .delete::before, .delete::after {
+            background-color: rgb(187, 187, 187);
+        }
+    }
+
+    &.is-complete {
+        color: rgb(82, 175, 20);
+        text-decoration: line-through;
+
+        .delete {
+            background-color: rgb(61, 126, 212);
+        }
+
+        .delete::before, .delete::after {
+            background-color: #333;
+        }
+    }
+
+    .delete {
+        border: none;
+        cursor: pointer;
+        float: right;
+    }
+}
