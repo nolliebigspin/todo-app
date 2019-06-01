@@ -31,21 +31,18 @@ export default {
   },
   methods: {
     addTodo(e) {
+      // cancel form submission
       e.preventDefault();
-      const newTodo = {
-        id: uuid.v4(),
-        title: this.title,
-        description: this.description,
-        status: this.status,
-        deadline: this.deadline
-      };
+
       // Send to parent
-      if (newTodo.title.length > 0) {
-        this.$emit("add-todo", newTodo);
-        this.title = "";
-        this.description = "";
-        this.status = "";
-        this.deadline = "";
+      if (this.title.length > 0) {
+        this.$emit("add-todo", {
+          id: uuid.v4(),
+          title: this.title,
+          description: this.description,
+          status: this.status,
+          deadline: this.deadline
+        });
       } else {
         alert("Todo Title can't be empty!");
       }
