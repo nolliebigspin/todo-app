@@ -7,6 +7,8 @@
 </template>
 
 <script>
+import uuid from "uuid";
+
 import Header from "./components/layout/Header";
 import Todos from "./components/Todos";
 import AddTodo from "./components/AddTodo";
@@ -23,21 +25,21 @@ export default {
       filter: "",
       todos: [
         {
-          id: 1,
+          id: uuid.v4(),
           title: "Todo One",
           description: "Backflip lernen",
           status: "todo",
           deadline: "23.05.19"
         },
         {
-          id: 2,
+          id: uuid.v4(),
           title: "Todo Two",
           description: "Whips lernen",
           status: "active",
           deadline: "24.05.19"
         },
         {
-          id: 3,
+          id: uuid.v4(),
           title: "Todo Three",
           description: "Vue.js lernen",
           status: "completed",
