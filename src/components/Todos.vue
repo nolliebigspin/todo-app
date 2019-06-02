@@ -1,10 +1,10 @@
 <template>
   <div>
     <TodoItem
-      v-bind:todo="todo"
-      v-bind:key="todo.id"
+      :todo="todo"
+      :key="todo.id"
       v-for="todo in todos"
-      v-on:del-todo="$emit('del-todo', todo.id)"
+      @del-todo="$emit('del-todo', todo.id)"
     />
   </div>
 </template>

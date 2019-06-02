@@ -1,5 +1,5 @@
 <template>
-  <div class="todo-item" v-bind:class="{ 'is-complete' : status === 'completed' }">
+  <div class="todo-item" :class="{ 'is-complete' : status === 'completed' }">
     <b>{{ todo.title }}</b>
     &nbsp; | &nbsp;
     <small>{{ todo.description }}</small>
@@ -14,8 +14,6 @@
 </template>
 
 <script>
-import "./TodoItem.scss";
-
 export default {
   name: "TodoItem",
   props: ["todo"],

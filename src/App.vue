@@ -2,7 +2,7 @@
   <div id="app">
     <Header @filterChange="onFilterChange"/>
     <AddTodo @add-todo="addTodo"/>
-    <Todos v-bind:todos="filteredTodos" @del-todo="deleteTodo"/>
+    <Todos :todos="filteredTodos" @del-todo="deleteTodo"/>
   </div>
 </template>
 
