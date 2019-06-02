@@ -1,10 +1,12 @@
 const isProd = (process.env.NODE_ENV === 'production');
+const prodSourceMaps = false;
 
 module.exports = {
     filenameHashing: true,
     assetsDir: 'assets',
+    productionSourceMap: prodSourceMaps,
     css: {
-        sourceMap: !isProd,
+        sourceMap: !isProd || (prodSourceMaps && isProd),
         extract: isProd
     },
     chainWebpack: config => {
