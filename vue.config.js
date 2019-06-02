@@ -1,13 +1,18 @@
+const isProd = (process.env.NODE_ENV === 'production');
+
 module.exports = {
+    filenameHashing: true,
+    assetsDir: 'assets',
+    css: {
+        sourceMap: !isProd,
+        extract: isProd
+    },
     chainWebpack: config => {
         // no more vendor chunk file, pack everything into one file
-        config.optimization.delete('splitChunks')
-
+        config.optimization.delete('splitChunks');
         // disable production tip in production
-        if (process.env.NODE_ENV === 'production') {
-            config.productionTip = false;
-        } else {
-            config.productionTip = true;
-        }
+        config.productionTip = isProd;
+        // disable vue logs in production
+        config.silent = isProd;
     }
 }

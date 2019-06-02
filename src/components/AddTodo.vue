@@ -1,8 +1,18 @@
 <template>
   <div>
     <form @submit="addTodo">
-      <input type="text" v-model="title" placeholder="Add Todo..." class="input">
-      <input type="text" v-model="description" placeholder="Add a description" class="input">
+      <input
+        type="text"
+        v-model="title"
+        placeholder="Add Todo..."
+        class="input"
+      >
+      <input
+        type="text"
+        v-model="description"
+        placeholder="Add a description"
+        class="input"
+      >
       <div class="select">
         <select v-model="status">
           <option>todo</option>
@@ -10,8 +20,17 @@
           <option>completed</option>
         </select>
       </div>
-      <input type="text" v-model="deadline" placeholder="Deadline..." class="input">
-      <input type="submit" value="Submit" class="button is-primary">
+      <input
+        type="text"
+        v-model="deadline"
+        placeholder="Deadline..."
+        class="input"
+      >
+      <input
+        type="submit"
+        value="Submit"
+        class="button is-primary"
+      >
     </form>
   </div>
 </template>

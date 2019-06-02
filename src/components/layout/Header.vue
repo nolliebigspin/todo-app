@@ -1,6 +1,13 @@
 <template>
-  <header class="header" :class="{ 'is-filtering' : filter.length > 0 }">
-    <input type="text" v-model="filter" @input="onFilterChange">
+  <header
+    class="header"
+    :class="{ 'is-filtering' : filter.length > 0 }"
+  >
+    <input
+      type="text"
+      v-model="filter"
+      @input="onFilterChange"
+    >
     <h1>Todo-List</h1>
   </header>
 </template>

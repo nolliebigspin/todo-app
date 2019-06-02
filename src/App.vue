@@ -1,8 +1,11 @@
 <template>
   <div id="app">
-    <Header @filterChange="onFilterChange"/>
-    <AddTodo @add-todo="addTodo"/>
-    <Todos :todos="filteredTodos" @del-todo="deleteTodo"/>
+    <Header @filterChange="onFilterChange" />
+    <AddTodo @add-todo="addTodo" />
+    <Todos
+      :todos="filteredTodos"
+      @del-todo="deleteTodo"
+    />
   </div>
 </template>
 
@@ -14,7 +17,7 @@ import Todos from "./components/Todos";
 import AddTodo from "./components/AddTodo";
 
 export default {
-  name: "app",
+  name: "App",
   components: {
     Header,
     Todos,

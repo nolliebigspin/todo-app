@@ -1,22 +1,41 @@
 <template>
-  <div class="todo-item" :class="{ 'is-complete' : status === 'completed' }">
+  <div
+    class="todo-item"
+    :class="{ 'is-complete' : status === 'completed' }"
+  >
     <b>{{ todo.title }}</b>
     &nbsp; | &nbsp;
     <small>{{ todo.description }}</small>
     &nbsp; | &nbsp;
     <select v-model="status">
-      <option v-for="opt in this.options" :key="opt">{{ opt }}</option>
+      <option
+        v-for="opt in this.options"
+        :key="opt"
+      >
+        {{ opt }}
+      </option>
     </select>
     &nbsp; | &nbsp;
     {{ todo.deadline }}
-    <a class="delete" @click="$emit('del-todo', todo.id)"></a>
+    <a
+      class="delete"
+      @click="$emit('del-todo', todo.id)"
+    />
   </div>
 </template>
 
 <script>
 export default {
   name: "TodoItem",
-  props: ["todo"],
+  props: {
+    todo: {
+      type: Object,
+      required: true,
+      default() {
+        return {}
+      }
+    }
+  },
   data() {
     return {
       options: ["todo", "active", "completed"],
