@@ -13,7 +13,7 @@ module.exports = {
         // no more vendor chunk file, pack everything into one file
         config.optimization.delete('splitChunks');
         // disable production tip in production
-        config.productionTip = isProd;
+        config.productionTip = !isProd;
         // disable vue logs in production
         config.silent = isProd;
     }
