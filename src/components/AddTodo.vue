@@ -36,7 +36,7 @@
 </template>
 
 <script>
-import uuid from "uuid";
+const uuid = () => import("uuid");
 
 export default {
   name: "AddTodo",

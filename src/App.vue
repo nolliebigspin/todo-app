@@ -12,9 +12,9 @@
 <script>
 import uuid from "uuid";
 
-import Header from "./components/layout/Header";
-import Todos from "./components/Todos";
-import AddTodo from "./components/AddTodo";
+const Header = () => import("./components/layout/Header");
+const Todos = () => import("./components/Todos");
+const AddTodo = () => import("./components/AddTodo");
 
 export default {
   name: "App",

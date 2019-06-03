@@ -10,7 +10,7 @@
 </template>
 
 <script>
-import TodoItem from "./TodoItem.vue";
+const TodoItem = () => import("./TodoItem");
 
 export default {
   name: "Todos",
